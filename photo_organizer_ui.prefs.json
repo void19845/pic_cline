@@ -1,0 +1,15 @@
+{
+  "input": "C:/Users/voidn/Downloads/Photos-3-001 (2)",
+  "output": "C:/Users/voidn/Desktop/photo",
+  "vault": "C:/Users/voidn/Desktop/photo",
+  "notes": "",
+  "dry_run": true,
+  "skip_ai": false,
+  "skip_faces": false,
+  "skip_video": false,
+  "skip_phash": false,
+  "dup_report": true,
+  "dup_action": "skip",
+  "threshold": 8,
+  "no_integrity": false
+}

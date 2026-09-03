@@ -1,6 +1,8 @@
 # photo_organizer requirements
 # Install with: pip install -r requirements.txt
 
+PyYAML>=6.0                    # core/ (obsidian_core) — frontmatter serialization
+PyQt6>=6.6                     # ui/ (photo_organizer_gui.py) — Phase 2 UI
 Pillow>=10.0
 piexif>=1.1.3
 reverse_geocoder>=1.5.1

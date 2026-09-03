@@ -1,0 +1,106 @@
+{
+  "_meta": { "lang": "English", "code": "en" },
+
+  "app_title": "Photo Organizer + Obsidian",
+  "app_subtitle": "+ Obsidian",
+
+  "tab_logs":   "Logs",
+  "tab_review": "Review Duplicates",
+  "tab_faces":  "Face Labels",
+
+  "section_folders":     "FOLDERS",
+  "section_options":     "OPTIONS",
+  "section_duplicates":  "DUPLICATE DETECTION",
+  "section_integrity":   "INTEGRITY CHECK",
+  "section_workers":     "PARALLEL WORKERS",
+  "section_maintenance": "MAINTENANCE",
+  "section_language":    "LANGUAGE",
+
+  "lbl_source_folder":  "Source media folder",
+  "lbl_output_folder":  "Output folder (inside vault)",
+  "lbl_vault_folder":   "Obsidian vault root",
+  "lbl_notes_folder":   "Notes folder (optional)",
+  "btn_browse":         "Browse",
+
+  "chk_dry_run":    "Dry run (preview only — nothing moved)",
+  "chk_skip_ai":    "Skip AI scene tagging (faster)",
+  "chk_skip_faces": "Skip face detection",
+  "chk_skip_video": "Skip video files",
+
+  "lbl_dup_action":     "Action on duplicate",
+  "dup_log_only":       "Log only",
+  "dup_move":           "Move to /duplicates",
+  "dup_delete":         "Delete",
+  "chk_dup_report":     "Generate duplicates_report.md",
+  "chk_skip_phash":     "Exact hash only (skip perceptual)",
+  "lbl_phash_threshold":"Perceptual threshold",
+  "phash_hint":         "0=exact - 8=default - 20=loose",
+
+  "integrity_desc":     "SHA-256 verified after every move.\nDetects missing or corrupted files.",
+  "chk_no_integrity":   "Disable integrity report (not recommended)",
+  "integrity_pending":  "Not yet verified",
+
+  "lbl_io_workers": "I/O threads (EXIF - move - hash - notes)",
+  "lbl_ai_workers": "AI concurrency (CLIP - face detection)",
+  "workers_auto":   "Auto",
+  "workers_hint":   "0=Auto",
+
+  "btn_review_dupes":    "Review duplicates",
+  "review_dupes_hint":   "Side-by-side comparison in the right panel.",
+  "btn_edit_faces":      "Edit face labels",
+  "edit_faces_hint":     "Rename person_00 -> Alice, etc.",
+  "btn_cleanup_notes":   "Clean up orphan notes",
+  "cleanup_notes_hint":  "Deletes notes whose media no longer exists.",
+
+  "lbl_language": "Interface language",
+
+  "btn_run":  "Run",
+  "btn_stop": "Stop",
+
+  "status_ready":   "Ready",
+  "status_running": "Running...",
+  "status_stopped": "Stopped by user",
+
+  "progress_idle":     "Waiting...",
+  "progress_loading":  "Loading CLIP model...",
+  "progress_scanning": "Scanning...",
+  "progress_done":     "Done",
+
+  "btn_clear":  "Clear",
+  "btn_reload": "Reload",
+
+  "dup_header_counter":  "{current} / {total}",
+  "dup_no_pairs":        "No pairs to review",
+  "dup_run_first":       "Run the organiser first, or all pairs already reviewed.",
+  "dup_all_done":        "All {total} pair(s) reviewed [OK]",
+  "dup_badge_exact":     "EXACT duplicate  (id {id})",
+  "dup_badge_near":      "NEAR duplicate  (id {id})",
+  "dup_role_original":   "Original",
+  "dup_role_duplicate":  "Duplicate",
+  "btn_keep_original":   "<- Keep original",
+  "btn_keep_both":       "Keep both",
+  "btn_keep_duplicate":  "Keep duplicate ->",
+  "btn_skip":            "Skip",
+  "btn_undo":            "Undo",
+  "dup_missing":         "Not found",
+  "dup_missing_detail":  "MISSING - file could not be located",
+
+  "faces_title":       "Rename face labels",
+  "faces_subtitle":    "Edit right column - Save to apply",
+  "faces_col_auto":    "Auto label",
+  "faces_col_human":   "Your name",
+  "btn_save_apply":    "Save + apply to notes",
+  "btn_save_only":     "Save only",
+  "faces_saved":       "Saved [OK]",
+  "faces_applying":    "Applying...",
+  "faces_no_labels":   "No face_labels.json found.\nRun the organiser first.",
+  "faces_count":       "{n} label(s) loaded",
+
+  "err_missing_fields": "Input, output, and vault folders are required.",
+  "err_vault_missing":  "Set the vault folder first.",
+  "err_not_found":      "photo_organizer.py not found.",
+  "confirm_trash_title":"Confirm deletion",
+  "confirm_trash_body": "Duplicates will be permanently deleted.\n\nContinue?",
+  "confirm_cleanup_title": "Confirm cleanup",
+  "confirm_cleanup_body":  "Delete orphan note files?\n(Use Dry Run to preview first.)"
+}

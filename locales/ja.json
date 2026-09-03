@@ -1,0 +1,106 @@
+{
+  "_meta": { "lang": "日本語", "code": "ja" },
+
+  "app_title": "メディア整理 + Obsidian",
+  "app_subtitle": "+ Obsidian",
+
+  "tab_logs":   "ログ",
+  "tab_review": "重複を確認",
+  "tab_faces":  "顔ラベル",
+
+  "section_folders":     "フォルダ",
+  "section_options":     "オプション",
+  "section_duplicates":  "重複検出",
+  "section_integrity":   "整合性チェック",
+  "section_workers":     "並列ワーカー",
+  "section_maintenance": "メンテナンス",
+  "section_language":    "言語",
+
+  "lbl_source_folder":  "メディアソースフォルダ",
+  "lbl_output_folder":  "出力フォルダ（vault内）",
+  "lbl_vault_folder":   "Obsidian vaultのルート",
+  "lbl_notes_folder":   "ノートフォルダ（任意）",
+  "btn_browse":         "参照",
+
+  "chk_dry_run":    "ドライラン（プレビューのみ — 移動しない）",
+  "chk_skip_ai":    "AIタグ付けをスキップ（高速化）",
+  "chk_skip_faces": "顔検出をスキップ",
+  "chk_skip_video": "動画ファイルをスキップ",
+
+  "lbl_dup_action":     "重複ファイルへの処理",
+  "dup_log_only":       "ログのみ",
+  "dup_move":           "/duplicatesへ移動",
+  "dup_delete":         "削除",
+  "chk_dup_report":     "duplicates_report.mdを生成",
+  "chk_skip_phash":     "完全一致のみ（知覚的ハッシュをスキップ）",
+  "lbl_phash_threshold":"知覚的類似度しきい値",
+  "phash_hint":         "0=完全一致 - 8=デフォルト - 20=緩い",
+
+  "integrity_desc":     "移動後にSHA-256を検証します。\n欠損または破損ファイルを検出します。",
+  "chk_no_integrity":   "整合性レポートを無効にする（非推奨）",
+  "integrity_pending":  "未検証",
+
+  "lbl_io_workers": "I/Oスレッド数（EXIF - 移動 - ハッシュ - ノート）",
+  "lbl_ai_workers": "AI同時実行数（CLIP - 顔検出）",
+  "workers_auto":   "自動",
+  "workers_hint":   "0=自動",
+
+  "btn_review_dupes":    "重複を確認する",
+  "review_dupes_hint":   "右パネルで並べて比較します。",
+  "btn_edit_faces":      "顔ラベルを編集",
+  "edit_faces_hint":     "person_00 -> Aliceなどに名前を変更。",
+  "btn_cleanup_notes":   "孤立ノートを削除",
+  "cleanup_notes_hint":  "メディアが存在しないノートを削除します。",
+
+  "lbl_language": "インターフェース言語",
+
+  "btn_run":  "実行",
+  "btn_stop": "停止",
+
+  "status_ready":   "準備完了",
+  "status_running": "実行中...",
+  "status_stopped": "ユーザーが停止",
+
+  "progress_idle":     "待機中...",
+  "progress_loading":  "CLIPモデルを読み込み中...",
+  "progress_scanning": "スキャン中...",
+  "progress_done":     "完了",
+
+  "btn_clear":  "クリア",
+  "btn_reload": "再読み込み",
+
+  "dup_header_counter":  "{current} / {total}",
+  "dup_no_pairs":        "確認するペアがありません",
+  "dup_run_first":       "まず整理ツールを実行するか、すべてのペアが確認済みです。",
+  "dup_all_done":        "全{total}ペアを確認しました [OK]",
+  "dup_badge_exact":     "完全一致の重複  (id {id})",
+  "dup_badge_near":      "近似重複  (id {id})",
+  "dup_role_original":   "オリジナル",
+  "dup_role_duplicate":  "重複",
+  "btn_keep_original":   "<- オリジナルを保持",
+  "btn_keep_both":       "両方を保持",
+  "btn_keep_duplicate":  "重複を保持 ->",
+  "btn_skip":            "スキップ",
+  "btn_undo":            "元に戻す",
+  "dup_missing":         "見つかりません",
+  "dup_missing_detail":  "欠損 - ファイルが見つかりません",
+
+  "faces_title":       "顔ラベルの名前変更",
+  "faces_subtitle":    "右列を編集 - 保存して適用",
+  "faces_col_auto":    "自動ラベル",
+  "faces_col_human":   "あなたの名前",
+  "btn_save_apply":    "保存してノートに適用",
+  "btn_save_only":     "保存のみ",
+  "faces_saved":       "保存しました [OK]",
+  "faces_applying":    "適用中...",
+  "faces_no_labels":   "face_labels.jsonが見つかりません。\nまず整理ツールを実行してください。",
+  "faces_count":       "{n}個のラベルを読み込みました",
+
+  "err_missing_fields": "ソース、出力、vaultフォルダが必要です。",
+  "err_vault_missing":  "まずvaultフォルダを設定してください。",
+  "err_not_found":      "photo_organizer.pyが見つかりません。",
+  "confirm_trash_title":"削除の確認",
+  "confirm_trash_body": "重複ファイルが完全に削除されます。\n\n続行しますか？",
+  "confirm_cleanup_title": "クリーンアップの確認",
+  "confirm_cleanup_body":  "孤立したノートファイルを削除しますか？\n（まずドライランでプレビューしてください。）"
+}

@@ -1,8 +1,8 @@
 {
-  "input": "C:/Users/voidn/Downloads/Photos-3-001 (2)",
+  "input": "C:/Users/voidn/Desktop/photo",
   "output": "C:/Users/voidn/Desktop/photo",
   "vault": "C:/Users/voidn/Desktop/photo",
-  "notes": "",
+  "notes": "C:/Users/voidn/Desktop/photo/photo-notes",
   "dry_run": true,
   "skip_ai": false,
   "skip_faces": false,
@@ -11,5 +11,8 @@
   "dup_report": true,
   "dup_action": "skip",
   "threshold": 8,
-  "no_integrity": false
+  "no_integrity": false,
+  "io_workers": 0,
+  "ai_workers": 0,
+  "language": "fr"
 }

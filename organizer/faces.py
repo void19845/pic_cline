@@ -5,7 +5,7 @@ from pathlib import Path
 
 FACE_TOLERANCE: float = 0.55   # lower = stricter matching
 
-_face_db:         dict[int, str] = {}   # cluster_id → label ("person_01")
+_face_db:         dict[int, str] = {}   # cluster_id -> label ("person_01")
 _known_encodings: list           = []
 _known_ids:       list[int]      = []
 _next_id:         int            = 0

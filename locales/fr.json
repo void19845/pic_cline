@@ -1,0 +1,106 @@
+{
+  "_meta": { "lang": "Français", "code": "fr" },
+
+  "app_title": "Organisateur de médias + Obsidian",
+  "app_subtitle": "+ Obsidian",
+
+  "tab_logs":   "Journaux",
+  "tab_review": "Réviser les doublons",
+  "tab_faces":  "Étiquettes de visages",
+
+  "section_folders":     "DOSSIERS",
+  "section_options":     "OPTIONS",
+  "section_duplicates":  "DÉTECTION DES DOUBLONS",
+  "section_integrity":   "VÉRIFICATION D'INTÉGRITÉ",
+  "section_workers":     "WORKERS PARALLÈLES",
+  "section_maintenance": "MAINTENANCE",
+  "section_language":    "LANGUE",
+
+  "lbl_source_folder":  "Dossier source des médias",
+  "lbl_output_folder":  "Dossier de destination (dans le vault)",
+  "lbl_vault_folder":   "Racine du vault Obsidian",
+  "lbl_notes_folder":   "Dossier des notes (optionnel)",
+  "btn_browse":         "Parcourir",
+
+  "chk_dry_run":    "Simulation (aperçu uniquement — rien n'est déplacé)",
+  "chk_skip_ai":    "Ignorer le tagging IA (plus rapide)",
+  "chk_skip_faces": "Ignorer la détection de visages",
+  "chk_skip_video": "Ignorer les fichiers vidéo",
+
+  "lbl_dup_action":     "Action sur les doublons",
+  "dup_log_only":       "Journaliser seulement",
+  "dup_move":           "Déplacer vers /duplicates",
+  "dup_delete":         "Supprimer",
+  "chk_dup_report":     "Générer duplicates_report.md",
+  "chk_skip_phash":     "Hash exact uniquement (ignorer perceptuel)",
+  "lbl_phash_threshold":"Seuil perceptuel",
+  "phash_hint":         "0=exact - 8=défaut - 20=souple",
+
+  "integrity_desc":     "SHA-256 vérifié après chaque déplacement.\nDétecte les fichiers manquants ou corrompus.",
+  "chk_no_integrity":   "Désactiver le rapport d'intégrité (déconseillé)",
+  "integrity_pending":  "Pas encore vérifié",
+
+  "lbl_io_workers": "Threads I/O (EXIF - déplacement - hash - notes)",
+  "lbl_ai_workers": "Concurrence IA (CLIP - détection de visages)",
+  "workers_auto":   "Auto",
+  "workers_hint":   "0=Auto",
+
+  "btn_review_dupes":    "Réviser les doublons",
+  "review_dupes_hint":   "Comparaison côte-à-côte dans le panneau droit.",
+  "btn_edit_faces":      "Modifier les étiquettes",
+  "edit_faces_hint":     "Renommer person_00 -> Alice, etc.",
+  "btn_cleanup_notes":   "Nettoyer les notes orphelines",
+  "cleanup_notes_hint":  "Supprime les notes dont le média n'existe plus.",
+
+  "lbl_language": "Langue de l'interface",
+
+  "btn_run":  "Lancer",
+  "btn_stop": "Arrêter",
+
+  "status_ready":   "Prêt",
+  "status_running": "En cours...",
+  "status_stopped": "Arrêté par l'utilisateur",
+
+  "progress_idle":     "En attente...",
+  "progress_loading":  "Chargement du modèle CLIP...",
+  "progress_scanning": "Analyse en cours...",
+  "progress_done":     "Terminé",
+
+  "btn_clear":  "Effacer",
+  "btn_reload": "Recharger",
+
+  "dup_header_counter":  "{current} / {total}",
+  "dup_no_pairs":        "Aucune paire à réviser",
+  "dup_run_first":       "Lancez d'abord l'organisateur, ou toutes les paires ont déjà été révisées.",
+  "dup_all_done":        "Toutes les {total} paire(s) révisées [OK]",
+  "dup_badge_exact":     "Doublon EXACT  (id {id})",
+  "dup_badge_near":      "Doublon PROCHE  (id {id})",
+  "dup_role_original":   "Original",
+  "dup_role_duplicate":  "Doublon",
+  "btn_keep_original":   "<- Garder l'original",
+  "btn_keep_both":       "Garder les deux",
+  "btn_keep_duplicate":  "Garder le doublon ->",
+  "btn_skip":            "Passer",
+  "btn_undo":            "Annuler",
+  "dup_missing":         "Introuvable",
+  "dup_missing_detail":  "MANQUANT - fichier introuvable",
+
+  "faces_title":       "Renommer les étiquettes de visages",
+  "faces_subtitle":    "Colonne droite modifiable - Sauvegarder pour appliquer",
+  "faces_col_auto":    "Étiquette auto",
+  "faces_col_human":   "Votre nom",
+  "btn_save_apply":    "Sauvegarder + appliquer aux notes",
+  "btn_save_only":     "Sauvegarder seulement",
+  "faces_saved":       "Sauvegardé [OK]",
+  "faces_applying":    "Application en cours...",
+  "faces_no_labels":   "Aucun face_labels.json trouvé.\nLancez d'abord l'organisateur.",
+  "faces_count":       "{n} étiquette(s) chargée(s)",
+
+  "err_missing_fields": "Les dossiers source, destination et vault sont requis.",
+  "err_vault_missing":  "Définissez d'abord le dossier vault.",
+  "err_not_found":      "photo_organizer.py introuvable.",
+  "confirm_trash_title":"Confirmer la suppression",
+  "confirm_trash_body": "Les doublons seront définitivement supprimés.\n\nContinuer ?",
+  "confirm_cleanup_title": "Confirmer le nettoyage",
+  "confirm_cleanup_body":  "Supprimer les fichiers de notes orphelines ?\n(Utilisez la simulation pour prévisualiser d'abord.)"
+}

@@ -6,7 +6,7 @@ from datetime import datetime
 from enum import Enum
 from pathlib import Path
 
-from organizer.hashing import sha256_of
+from .hashing import sha256_of
 
 
 class IntegrityStatus(str, Enum):
@@ -62,6 +62,7 @@ def write_integrity_report(
     vault_root: Path,
     records: list[IntegrityRecord],
     dry_run: bool,
+    log_fn=print,
 ) -> None:
     """Write ``integrity_report.md`` to vault root."""
     ts        = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -75,10 +76,10 @@ def write_integrity_report(
         f"Generated: {ts}", "",
         "| Status | Count |",
         "|--------|-------|",
-        f"| ✅ OK | {ok} |",
-        f"| ⚠️ Skipped | {skipped} |",
-        f"| ❌ Missing | {missing} |",
-        f"| 🔴 Corrupted | {corrupted} |", "",
+        f"| [OK] OK | {ok} |",
+        f"| [??] Skipped | {skipped} |",
+        f"| [!!] Missing | {missing} |",
+        f"| [!!] Corrupted | {corrupted} |", "",
     ]
 
     problems = [r for r in records
@@ -90,8 +91,8 @@ def write_integrity_report(
             "|--------|------|-------------|-----------|",
         ]
         for r in problems:
-            dh = (r.dest_hash or "—")[:12] + "…"
-            sh = r.source_hash[:12] + "…"
+            dh = (r.dest_hash or "—")[:12] + "..."
+            sh = r.source_hash[:12] + "..."
             lines.append(
                 f"| {r.status} | {Path(r.destination).name} | `{sh}` | `{dh}` |"
             )
@@ -102,17 +103,17 @@ def write_integrity_report(
         "| Status | File | SHA-256 |",
         "|--------|------|---------|",
     ]
-    icons = {"OK": "✅", "MISSING": "❌", "CORRUPTED": "🔴", "SKIPPED": "⚠️"}
+    icons = {"OK": "[OK]", "MISSING": "[!!]", "CORRUPTED": "[!!]", "SKIPPED": "[??]"}
     for r in records:
         icon = icons.get(r.status, "?")
         lines.append(
             f"| {icon} {r.status} | {Path(r.destination).name} "
-            f"| `{r.source_hash[:12]}…` |"
+            f"| `{r.source_hash[:12]}...` |"
         )
 
     report_path = vault_root / "integrity_report.md"
     if not dry_run:
         report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-        print(f"\nIntegrity report → {report_path}")
+        log_fn(f"\nIntegrity report -> {report_path}")
     else:
-        print(f"\n[dry-run] would write integrity report → {report_path}")
+        log_fn(f"\n[dry-run] would write integrity report -> {report_path}")

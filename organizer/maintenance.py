@@ -5,7 +5,7 @@ import json
 import re
 from pathlib import Path
 
-from organizer.metadata import SUPPORTED_EXTENSIONS, VIDEO_EXTENSIONS
+from .metadata import SUPPORTED_EXTENSIONS, VIDEO_EXTENSIONS
 
 
 # ── Face label renaming ──────────────────────────────────────────────────────
@@ -15,7 +15,7 @@ def apply_face_renames(vault_root: Path, notes_dir: Path) -> int:
     Replace auto-generated ``person_XX`` labels in all notes with human names
     defined in ``<vault_root>/face_labels.json``.
 
-    The JSON file maps auto-label → human name, e.g.::
+    The JSON file maps auto-label -> human name, e.g.::
 
         {
           "person_00": "Alice",
@@ -53,16 +53,18 @@ def apply_face_renames(vault_root: Path, notes_dir: Path) -> int:
         print(f"  {auto} -> {human}")
 
     updated = 0
-    for md in sorted(notes_dir.glob("*.md")):
+    # rglob, not glob: PhotoNote/VideoNote.vault_path_components() nest notes
+    # under photo-notes/{year}/{MM-Month}/{city}/ -- they are never flat.
+    for md in sorted(notes_dir.rglob("*.md")):
         original = md.read_text(encoding="utf-8")
         text = original
 
         for auto_label, human_name in changes.items():
-            # Wikilinks:  [[person_00]]  →  [[Alice]]
+            # Wikilinks:  [[person_00]]  ->  [[Alice]]
             text = text.replace(f"[[{auto_label}]]", f"[[{human_name}]]")
             # YAML list entries (various positions):
-            #   [person_00, ...]  →  [Alice, ...]
-            #   [..., person_00]  →  [..., Alice]
+            #   [person_00, ...]  ->  [Alice, ...]
+            #   [..., person_00]  ->  [..., Alice]
             #   [..., person_00, ...]
             text = re.sub(
                 r'(?<=[\[,\s])' + re.escape(auto_label) + r'(?=[\],\s])',
@@ -114,12 +116,12 @@ def cleanup_orphan_notes(
     orphans_found   = 0
     orphans_deleted = 0
 
-    for md in sorted(notes_dir.glob("*.md")):
+    for md in sorted(notes_dir.rglob("*.md")):
         text   = md.read_text(encoding="utf-8")
         embeds = _EMBED_RE.findall(text)
 
         if not embeds:
-            continue   # no media embed → keep (might be an index/hub note)
+            continue   # no media embed -> keep (might be an index/hub note)
 
         broken = [
             embed for embed in embeds
@@ -128,7 +130,7 @@ def cleanup_orphan_notes(
         ]
 
         if len(broken) == len(embeds):
-            # All embeds broken → fully orphaned
+            # All embeds broken -> fully orphaned
             orphans_found += 1
             if dry_run:
                 print(f"  [dry-run] would delete: {md.name}")
@@ -140,7 +142,7 @@ def cleanup_orphan_notes(
                 print(f"            missing embed(s): {', '.join(broken)}")
 
         elif broken:
-            # Some embeds broken → warn and keep
+            # Some embeds broken -> warn and keep
             print(f"  [cleanup] partial orphan (kept): {md.name}")
             print(f"            broken embed(s): {', '.join(broken)}")
 

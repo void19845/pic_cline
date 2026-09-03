@@ -206,7 +206,7 @@ def _ffprobe_json(path: Path) -> dict:
 
 def _parse_iso6709(s: str) -> tuple[float | None, float | None]:
     """
-    Parse ISO 6709 GPS string → (lat, lon) decimal degrees.
+    Parse ISO 6709 GPS string -> (lat, lon) decimal degrees.
 
     Handles
     -------

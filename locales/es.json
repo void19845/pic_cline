@@ -1,0 +1,106 @@
+{
+  "_meta": { "lang": "Español", "code": "es" },
+
+  "app_title": "Organizador de medios + Obsidian",
+  "app_subtitle": "+ Obsidian",
+
+  "tab_logs":   "Registros",
+  "tab_review": "Revisar duplicados",
+  "tab_faces":  "Etiquetas de rostros",
+
+  "section_folders":     "CARPETAS",
+  "section_options":     "OPCIONES",
+  "section_duplicates":  "DETECCIÓN DE DUPLICADOS",
+  "section_integrity":   "VERIFICACIÓN DE INTEGRIDAD",
+  "section_workers":     "WORKERS PARALELOS",
+  "section_maintenance": "MANTENIMIENTO",
+  "section_language":    "IDIOMA",
+
+  "lbl_source_folder":  "Carpeta de medios de origen",
+  "lbl_output_folder":  "Carpeta de destino (dentro del vault)",
+  "lbl_vault_folder":   "Raíz del vault de Obsidian",
+  "lbl_notes_folder":   "Carpeta de notas (opcional)",
+  "btn_browse":         "Explorar",
+
+  "chk_dry_run":    "Simulación (solo vista previa — nada se mueve)",
+  "chk_skip_ai":    "Omitir etiquetado IA (más rápido)",
+  "chk_skip_faces": "Omitir detección de rostros",
+  "chk_skip_video": "Omitir archivos de video",
+
+  "lbl_dup_action":     "Acción sobre duplicados",
+  "dup_log_only":       "Solo registrar",
+  "dup_move":           "Mover a /duplicates",
+  "dup_delete":         "Eliminar",
+  "chk_dup_report":     "Generar duplicates_report.md",
+  "chk_skip_phash":     "Solo hash exacto (omitir perceptual)",
+  "lbl_phash_threshold":"Umbral perceptual",
+  "phash_hint":         "0=exacto - 8=predeterminado - 20=flexible",
+
+  "integrity_desc":     "SHA-256 verificado tras cada movimiento.\nDetecta archivos faltantes o corruptos.",
+  "chk_no_integrity":   "Desactivar informe de integridad (no recomendado)",
+  "integrity_pending":  "Aún no verificado",
+
+  "lbl_io_workers": "Hilos I/O (EXIF - mover - hash - notas)",
+  "lbl_ai_workers": "Concurrencia IA (CLIP - detección de rostros)",
+  "workers_auto":   "Auto",
+  "workers_hint":   "0=Auto",
+
+  "btn_review_dupes":    "Revisar duplicados",
+  "review_dupes_hint":   "Comparación lado a lado en el panel derecho.",
+  "btn_edit_faces":      "Editar etiquetas",
+  "edit_faces_hint":     "Renombrar person_00 -> Alice, etc.",
+  "btn_cleanup_notes":   "Limpiar notas huérfanas",
+  "cleanup_notes_hint":  "Elimina notas cuyo medio ya no existe.",
+
+  "lbl_language": "Idioma de la interfaz",
+
+  "btn_run":  "Ejecutar",
+  "btn_stop": "Detener",
+
+  "status_ready":   "Listo",
+  "status_running": "En ejecución...",
+  "status_stopped": "Detenido por el usuario",
+
+  "progress_idle":     "Esperando...",
+  "progress_loading":  "Cargando modelo CLIP...",
+  "progress_scanning": "Analizando...",
+  "progress_done":     "Completado",
+
+  "btn_clear":  "Limpiar",
+  "btn_reload": "Recargar",
+
+  "dup_header_counter":  "{current} / {total}",
+  "dup_no_pairs":        "No hay pares para revisar",
+  "dup_run_first":       "Ejecute primero el organizador, o todos los pares ya fueron revisados.",
+  "dup_all_done":        "Todos los {total} par(es) revisados [OK]",
+  "dup_badge_exact":     "Duplicado EXACTO  (id {id})",
+  "dup_badge_near":      "Duplicado CERCANO  (id {id})",
+  "dup_role_original":   "Original",
+  "dup_role_duplicate":  "Duplicado",
+  "btn_keep_original":   "<- Conservar original",
+  "btn_keep_both":       "Conservar ambos",
+  "btn_keep_duplicate":  "Conservar duplicado ->",
+  "btn_skip":            "Omitir",
+  "btn_undo":            "Deshacer",
+  "dup_missing":         "No encontrado",
+  "dup_missing_detail":  "FALTANTE - no se pudo localizar el archivo",
+
+  "faces_title":       "Renombrar etiquetas de rostros",
+  "faces_subtitle":    "Columna derecha editable - Guardar para aplicar",
+  "faces_col_auto":    "Etiqueta automática",
+  "faces_col_human":   "Su nombre",
+  "btn_save_apply":    "Guardar + aplicar a notas",
+  "btn_save_only":     "Solo guardar",
+  "faces_saved":       "Guardado [OK]",
+  "faces_applying":    "Aplicando...",
+  "faces_no_labels":   "No se encontró face_labels.json.\nEjecute primero el organizador.",
+  "faces_count":       "{n} etiqueta(s) cargada(s)",
+
+  "err_missing_fields": "Se requieren las carpetas de origen, destino y vault.",
+  "err_vault_missing":  "Primero configure la carpeta del vault.",
+  "err_not_found":      "photo_organizer.py no encontrado.",
+  "confirm_trash_title":"Confirmar eliminación",
+  "confirm_trash_body": "Los duplicados serán eliminados permanentemente.\n\n¿Continuar?",
+  "confirm_cleanup_title": "Confirmar limpieza",
+  "confirm_cleanup_body":  "¿Eliminar archivos de notas huérfanas?\n(Use la simulación para previsualizar primero.)"
+}
